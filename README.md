@@ -47,12 +47,7 @@ An end-to-end Business Intelligence project analyzing 96,000+ e-commerce transac
 
 1.**Import Data:** 
 Download the raw dataset from [Kaggle: Brazilian E-Commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and import the CSV files into the respective tables.
+
 2. **Clone the repository:**
    ```bash
    git clone https://github.com/vistadev-prog/olist-ecommerce-bi-portfolio.git
-3. **Setup Database:**
-Run schema.sql, data_cleaning.sql, and rfm_analysis.sql in your local PostgreSQL environment.
-4. **Import Data:**
-Download the raw dataset from Kaggle: Brazilian E-Commerce and import the CSV files into the respective tables.
-6. **Connect Power BI:**
-Open olist_ecommerce_dashboard.pbix, update the PostgreSQL data source credentials to match your local setup, and click "Refresh".
