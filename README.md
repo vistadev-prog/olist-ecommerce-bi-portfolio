@@ -1,25 +1,58 @@
-# olist-ecommerce-bi-portfolio
-End-to-end BI Dashboard for E-Commerce Customer Segmentation (RFM Analysis) using PostgreSQL and Power BI.
+# 🛒 E-Commerce Customer Intelligence & RFM Dashboard
+
+An end-to-end Business Intelligence project analyzing 96,000+ e-commerce transactions (Olist dataset) to identify customer behavior patterns, optimize revenue retention, and drive data-driven marketing strategies.
+
+---
+
+##  Dashboard Preview
+
+### 📄 Page 1: Executive Overview
 ![Dashboard Preview](dashboard-1.jpg)
+*High-level KPIs, revenue trends, customer segmentation (RFM), and regional performance.*
+
+### 🔍 Page 2: Deep Dive - Product & Logistics Analysis
 ![Dashboard Preview](dashboard-2.jpg)
+*Category revenue breakdown, delivery delay impact on customer satisfaction, and top At-Risk high-value customers.*
 
-## 📊 E-Commerce Customer Intelligence Dashboard
+---
 
-### 📌 Project Overview
-This dashboard analyzes e-commerce transaction data (Olist) to identify customer behavior patterns and maximize retention. It utilizes a modified RFM (Recency, Frequency, Monetary) approach adapted into 2D segmentation, specifically designed to address the dataset's characteristic of being dominated by *one-time buyers*.
+##  Key Business Insights
 
-### 🛠️ Tech Stack
-- **Database**: PostgreSQL (Star Schema Modeling, Data Cleaning)
-- **BI Tool**: Power BI (DAX, Data Modeling, Interactive Visuals)
-- **Analysis**: SQL (CTEs, Window Functions, Percentiles)
+1. **The Retention Crisis:** Over 56% of the customer base is classified as "Lost" (one-time buyers), indicating a severe leak in the customer lifecycle.
+2. **Category Dominance:** "Beleza Saude" (Health & Beauty) leads category revenue (1.23M), followed by "Religios Presentes" (1.17M).
+3. **Logistics Impact on Satisfaction:** On-time deliveries yield an average rating of **4.29 ⭐**, while late deliveries plummet to **2.57 ⭐** (a 40% drop in satisfaction).
+4. **Actionable Target:** The "At-Risk" segment contributes the highest revenue but has been inactive for >150 days. Priority re-engagement campaigns should target customers in **MG, MS, and SP**.
 
-### 💡 Key Business Insights
-1. **Critical Retention Issue**: 56% of customers are classified as "Lost" (inactive & low monetary value).
-2. **Hidden Revenue Opportunity**: The "At Risk" segment (18% of customers) contributes the highest revenue but has been inactive for >300 days. This is the primary target for *re-engagement* campaigns.
-3. **Growth Trend**: The business shows consistent growth with a significant spike in Q4 2017.
+---
 
-### 🚀 How to Use
-1. Clone this repository.
-2. Run the SQL scripts in schema.sql and rfm_analysis.sql on your PostgreSQL database.
-3. Impor the dataset from [Kaggle Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).
-4. Open the .pbix file in Power BI Desktop and connect it to your local database.
+## 🛠️ Tech Stack & Methodology
+
+* **Database & ETL:** PostgreSQL (Data cleaning, Star Schema modeling, Advanced SQL).
+* **Analysis:** RFM Analysis (Modified 2D Recency & Monetary using Dynamic Thresholding/Percentiles).
+* **Visualization:** Power BI (DAX, Data Modeling, Interactive Dashboards, Conditional Formatting).
+
+---
+
+## 📁 Repository Structure
+
+* `schema.sql`: Database schema creation (Star Schema: Fact & Dimension tables).
+* `data_cleaning.sql`: Data transformation and cleaning scripts.
+* `rfm_analysis.sql`: Advanced SQL logic for dynamic customer segmentation.
+* `olist_ecommerce_dashboard.pbix`: The interactive Power BI dashboard file.
+* `E-Commerce_Retention_Strategy_Memo.pdf`: 1-page executive memo with strategic recommendations.
+
+---
+
+##  How to Use
+
+1.**Import Data:** 
+Download the raw dataset from [Kaggle: Brazilian E-Commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and import the CSV files into the respective tables.
+2. **Clone the repository:**
+   ```bash
+   git clone https://github.com/vistadev-prog/olist-ecommerce-bi-portfolio.git
+3. **Setup Database:**
+Run schema.sql, data_cleaning.sql, and rfm_analysis.sql in your local PostgreSQL environment.
+4. **Import Data:**
+Download the raw dataset from Kaggle: Brazilian E-Commerce and import the CSV files into the respective tables.
+6. **Connect Power BI:**
+Open olist_ecommerce_dashboard.pbix, update the PostgreSQL data source credentials to match your local setup, and click "Refresh".
