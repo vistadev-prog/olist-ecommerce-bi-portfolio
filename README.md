@@ -45,9 +45,7 @@ An end-to-end Business Intelligence project analyzing 96,000+ e-commerce transac
 
 ##  How to Use
 
-1.**Import Data:** 
-Download the raw dataset from [Kaggle: Brazilian E-Commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and import the CSV files into the respective tables.
-
+1.**Import Data:** Download the raw dataset from [Kaggle: Brazilian E-Commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and import the CSV files into the respective tables.
 2. **Clone the repository:**
    ```bash
    git clone https://github.com/vistadev-prog/olist-ecommerce-bi-portfolio.git
