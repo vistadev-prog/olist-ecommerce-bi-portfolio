@@ -36,7 +36,7 @@ An end-to-end Business Intelligence project analyzing 96,000+ e-commerce transac
 ## 📁 Repository Structure
 
 * `schema.sql`: Database schema creation (Star Schema: Fact & Dimension tables).
-* `data_cleaning.sql`: Data transformation and cleaning scripts.
+* `data_cleaning.sql`: Data transformation, cleaning scripts, and creation of analytical views (`v_category_performance`, `v_delivery_delay`).
 * `rfm_analysis.sql`: Advanced SQL logic for dynamic customer segmentation.
 * `olist_ecommerce_dashboard.pbix`: The interactive Power BI dashboard file.
 * `E-Commerce_Retention_Strategy_Memo.pdf`: 1-page executive memo with strategic recommendations.
