@@ -1,6 +1,7 @@
 # olist-ecommerce-bi-portfolio
 End-to-end BI Dashboard for E-Commerce Customer Segmentation (RFM Analysis) using PostgreSQL and Power BI.
-![Dashboard Preview](olist_ecommerce_dashboard.jpg)
+![Dashboard Preview](dashboard-1.jpg)
+![Dashboard Preview](dashboard-2.jpg)
 
 ## 📊 E-Commerce Customer Intelligence Dashboard
 
