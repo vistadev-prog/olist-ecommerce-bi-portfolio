@@ -39,3 +39,39 @@ FROM olist_orders_dataset
 ORDER BY date_key;
 
 ALTER TABLE dim_date ADD PRIMARY KEY (date_key);
+
+-- ==========================================
+-- VIEW 1: Performa Kategori Produk
+-- Digunakan untuk visualisasi Top 10 Categories
+-- ==========================================
+CREATE OR REPLACE VIEW v_category_performance AS
+SELECT 
+    p.product_category_name AS category_name,
+    COUNT(DISTINCT oi.order_id) AS total_orders,
+    ROUND(SUM(oi.price)::numeric, 2) AS total_revenue
+FROM olist_order_items_dataset oi
+JOIN olist_products_dataset p ON oi.product_id = p.product_id
+JOIN olist_orders_dataset o ON oi.order_id = o.order_id
+WHERE o.order_status = 'delivered' -- Hanya hitung pesanan yang sukses sampai
+GROUP BY p.product_category_name
+ORDER BY total_revenue DESC;
+
+
+-- ==========================================
+-- VIEW 2: Analisis Keterlambatan Pengiriman
+-- Digunakan untuk korelasi Delivery vs Review Score
+-- ==========================================
+CREATE OR REPLACE VIEW v_delivery_delay AS
+SELECT 
+    order_id,
+    order_estimated_delivery_date,
+    order_delivered_customer_date,
+    CASE 
+        WHEN order_delivered_customer_date > order_estimated_delivery_date THEN 'Late'
+        ELSE 'On Time'
+    END AS delivery_status,
+    -- Hitung selisih hari (positif = telat, negatif = datang lebih cepat)
+    EXTRACT(DAY FROM (order_delivered_customer_date - order_estimated_delivery_date)) AS delay_days
+FROM olist_orders_dataset
+WHERE order_status = 'delivered' 
+  AND order_delivered_customer_date IS NOT NULL;
